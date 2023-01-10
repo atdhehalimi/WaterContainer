@@ -40,12 +40,20 @@ public class Main extends JFrame implements ActionListener {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = rand.nextInt(10);
         }
-
-        BruteForce s1= new BruteForce();
-        twoPointer s2= new twoPointer();
         
+        long startTime1 = System.nanoTime();
+        BruteForce s1= new BruteForce();
         int result1 = s1.maxArea(numbers);
+        long endTime1 = System.nanoTime();
+        long totalTime1 = endTime1 - startTime1;
+        System.out.println("Koha e ekzekutimit per algoritmin Brute Force: " +totalTime1);
+
+        long startTime2 = System.nanoTime();
+        twoPointer s2= new twoPointer();
         int result2 = s2.maxArea(numbers);
+        long endTime2 = System.nanoTime();
+        long totalTime2 = endTime2 - startTime2;
+        System.out.println("Koha e ekzekutimit per algoritmint twoPointer: "+totalTime2);
 
 // poshte paraqiten shtyllat dhe gjatesia e tyre
         for(int i=0;i<numbers.length;i++){
